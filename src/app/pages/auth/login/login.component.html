@@ -1,0 +1,61 @@
+<nb-alert *ngIf="success == true" status="success">You have been successfully authenticated!</nb-alert>
+<nb-alert *ngIf="danger == true" status="danger">{{errorMsg}}</nb-alert>
+<!-- <nb-alert *ngIf="" status="primary">You have been successfully authenticated!</nb-alert> -->
+
+<h1 id="title" class="title">Login</h1>
+<p class="sub-title">Hello! Log in with your email.</p>
+
+    <form class="form-signup" (submit)="handleSubmit()">
+  <div class="form-control-group">
+    <label class="label" for="input-username">Username:</label>
+      <input nbInput
+      fullWidth type="text" id="input-username" class="form-control" placeholder="Name" required
+              (change)="handleUserNameChange($event)"/>
+              </div>
+
+                <div class="form-control-group">
+    <label class="label" for="input-password">Password:</label>
+      <input nbInput
+      fullWidth type="password" id="input-password" class="form-control" placeholder="Password" required
+             (change)="handlePasswordChange($event)"/>
+             </div>
+      <!-- <label class="checkbox">
+        <input type="checkbox" value="remember-me" (change)="handleRememberMeClick()"/>
+        &nbsp; Remember me
+      </label> -->
+        <button nbButton type="submit"
+          fullWidth
+          status="success"
+          [class.btn-pulse]="submitted" [disabled] = "true">
+    Log In
+  </button>
+    </form>
+    <section  class="links" aria-label="Social sign in">
+      or enter with:
+      <div class="socials">
+        <ng-container >
+            <button nbButton hero status="primary" (click)="signInWithGoogle()">Google Login</button>
+        </ng-container>
+      </div>
+    </section>
+
+<section class="another-action" aria-label="Register">
+  Don't have an account? <a class="text-link" routerLink="/auth/register">Register</a>
+</section>
+
+<!-- <nb-alert *ngIf="showMessages.error && errors?.length && !submitted" outline="danger" role="alert">
+  <p class="alert-title"><b>Oh snap!</b></p>
+  <ul class="alert-message-list">
+    <li *ngFor="let error of errors" class="alert-message">{{ error }}</li>
+  </ul>
+</nb-alert>
+
+<nb-alert *ngIf="showMessages.success && messages?.length && !submitted" outline="success" role="alert">
+  <p class="alert-title"><b>Hooray!</b></p>
+  <ul class="alert-message-list">
+    <li *ngFor="let message of messages" class="alert-message">{{ message }}</li>
+  </ul>
+</nb-alert> -->
+
+
+

@@ -1,0 +1,75 @@
+<nb-card size="medium">
+  <nb-card-body>
+    <div class="location">
+      <span>{{weatherCity?.name}}</span>
+    </div>
+    <div class="date">
+      <span>{{date | date:'fullDate'}}</span>
+    </div>
+    <div class="daily-forecast">
+      <div class="info">
+        <div class="temperature">
+          <span>{{currentWeatherMainTemp | number:'1.0-0'}}&deg;</span>
+        </div>
+        <div class="icon">
+          <i *ngIf="currentWeatherMainTemp > 35" class="ion-ios-sunny-outline"></i>
+          <i *ngIf="currentWeatherMainTemp > 20 && currentWeatherMainTemp < 32" class="ion-ios-cloudy-outline"></i>
+          <i *ngIf="currentWeatherMainTemp < 20 " class="ion-ios-rainy-outline"></i>
+          <i *ngIf="currentWeatherMainTemp > 32 && currentWeatherMainTemp < 35" class="ion-ios-partlysunny-outline"></i>
+        </div>
+      </div>
+      <div class="details">
+        <div class="parameter">
+          <span class="parameter-name">max</span>
+          <span class="parameter-value">{{currentWeatherMainTempMax | number:'1.0-0'}}&deg;</span>
+        </div>
+        <div class="parameter">
+          <span class="parameter-name">min</span>
+          <span class="parameter-value">{{currentWeatherMainTempMin | number:'1.0-0'}}&deg;</span>
+        </div>
+        <div class="parameter">
+          <span class="parameter-name">wind</span>
+          <span class="parameter-value">{{currentWeatherWindSpeed | number:'1.0-0'}} km/h</span>
+        </div>
+        <div class="parameter">
+          <span class="parameter-name">hum</span>
+          <span class="parameter-value">{{  currentWeatherMainHumidity | number:'1.0-0'}}%</span>
+        </div>
+      </div>
+    </div>
+    <div class="weekly-forecast">
+      <div class="day">
+        <span class="caption">{{secondWeather?.dt_txt | date: 'EEE' }}</span>
+        <i *ngIf="secondWeatherMainTemp > 35" class="ion-ios-sunny-outline"></i>
+        <i *ngIf="secondWeatherMainTemp > 20 && secondWeatherMainTemp < 32" class="ion-ios-cloudy-outline"></i>
+        <i *ngIf="secondWeatherMainTemp < 20 " class="ion-ios-rainy-outline"></i>
+        <i *ngIf="secondWeatherMainTemp > 32 && secondWeatherMainTemp < 35" class="ion-ios-partlysunny-outline"></i>
+        <span class="temperature">{{secondWeatherMainTemp | number:'1.0-0'}}&deg;</span>
+      </div>
+      <div class="day">
+        <span class="caption">{{thirdWeather?.dt_txt | date: 'EEE' }}</span>
+        <i *ngIf="thirdWeatherMainTemp > 35" class="ion-ios-sunny-outline"></i>
+        <i *ngIf="thirdWeatherMainTemp > 20 && thirdWeatherMainTemp < 32" class="ion-ios-cloudy-outline"></i>
+        <i *ngIf="thirdWeatherMainTemp < 20 " class="ion-ios-rainy-outline"></i>
+        <i *ngIf="thirdWeatherMainTemp > 32 && thirdWeatherMainTemp < 35" class="ion-ios-partlysunny-outline"></i>
+        <span class="temperature">{{thirdWeatherMainTemp | number:'1.0-0'}}&deg;</span>
+      </div>
+      <div class="day">
+        <span class="caption">{{fourthWeather?.dt_txt | date: 'EEE' }}</span>
+        <i *ngIf="fourthWeatherMainTemp > 35" class="ion-ios-sunny-outline"></i>
+        <i *ngIf="fourthWeatherMainTemp > 20 && fourthWeatherMainTemp < 32" class="ion-ios-cloudy-outline"></i>
+        <i *ngIf="fourthWeatherMainTemp < 20 " class="ion-ios-rainy-outline"></i>
+        <i *ngIf="fourthWeatherMainTemp > 32 && fourthWeatherMainTemp < 35" class="ion-ios-partlysunny-outline"></i>
+        <span class="temperature">{{fourthWeatherMainTemp | number:'1.0-0'}}&deg;</span>
+      </div>
+      <div class="day">
+        <span class="caption">{{fifthWeather?.dt_txt | date: 'EEE' }}</span>
+        <i *ngIf="fifthWeatherMainTemp > 35" class="ion-ios-sunny-outline"></i>
+        <i *ngIf="fifthWeatherMainTemp > 20 && fifthWeatherMainTemp < 32" class="ion-ios-cloudy-outline"></i>
+        <i *ngIf="fifthWeatherMainTemp < 20 " class="ion-ios-rainy-outline"></i>
+        <i *ngIf="fifthWeatherMainTemp > 32 && fifthWeatherMainTemp < 35" class="ion-ios-partlysunny-outline"></i>
+        <span class="temperature">{{fifthWeatherMainTemp | number:'1.0-0'}}&deg;</span>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>
